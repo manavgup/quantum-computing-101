@@ -163,6 +163,10 @@ where:
 |↺⟩ = (|0⟩ − i|1⟩)/√2:  θ = π/2, φ = 3π/2 (Left side of equator)
 ```
 
+![Common Qubit States on the Bloch Sphere](illustrations/bloch-sphere-basic.png)
+
+*Figure 1: The six most common qubit states visualized on the Bloch sphere. The computational basis states |0⟩ and |1⟩ are at the north and south poles, while superposition states |+⟩, |−⟩, |↻⟩, and |↺⟩ lie on the equator.*
+
 ### Why the Bloch Sphere is Useful
 
 **1. Geometric intuition**
@@ -460,6 +464,10 @@ Matrix: [1   0]
 
 Bloch sphere: π rotation around Z-axis
 ```
+
+![Pauli Gates on the Bloch Sphere](illustrations/gates-bloch-sphere.png)
+
+*Figure 2: The X, Y, and Z gates visualized as rotations on the Bloch sphere. Each gate performs a π (180°) rotation around its respective axis, transforming the qubit state geometrically.*
 
 **Hadamard Gate** (superposition creator):
 ```

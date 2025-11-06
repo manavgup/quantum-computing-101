@@ -188,6 +188,10 @@ where:
 
 **This is exactly what a qubit is!** (More in the next section)
 
+![Superposition Evolution](illustrations/superposition-evolution.png)
+
+*Figure 1: Creating superposition with a Hadamard gate. Starting from the definite state |0⟩ at the north pole of the Bloch sphere, applying H creates an equal superposition |+⟩ = (|0⟩ + |1⟩)/√2 on the equator. The measurement histogram shows the 50-50 distribution when measuring in the computational basis.*
+
 ### Superposition ≠ Uncertainty
 
 **Common misconception:** "The electron is up or down, we just don't know which."

@@ -150,6 +150,10 @@ q₁: ───────X────
 
 **This is the most common entanglement circuit!**
 
+![Bell State Circuit](illustrations/bell-state-circuit.png)
+
+*Figure 1: Quantum circuit for creating a Bell state |Φ⁺⟩. A Hadamard gate (H) creates superposition on the first qubit, followed by a CNOT gate that entangles the two qubits. The resulting state (|00⟩ + |11⟩)/√2 is maximally entangled.*
+
 **Creating other Bell states:**
 
 From |Φ⁺⟩, apply:
