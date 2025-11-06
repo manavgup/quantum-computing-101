@@ -38,6 +38,6 @@ pandas>=2.1.0
 # black>=23.12.0
 # flake8>=7.0.0
 
-# Documentation (optional)
-# sphinx>=7.2.0
-# sphinx-rtd-theme>=2.0.0
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0

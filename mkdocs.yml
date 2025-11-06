@@ -1,0 +1,179 @@
+site_name: Quantum Computing 101
+site_description: A comprehensive, beginner-friendly guide to quantum computing from fundamentals to applications
+site_author: Manav Gup
+repo_url: https://github.com/manavgup/quantum-computing-101
+repo_name: manavgup/quantum-computing-101
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.png
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - assets/css/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/manavgup/quantum-computing-101
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/manavgup
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX  # Add your GA4 ID
+
+copyright: Copyright &copy; 2025 Manav Gup. Licensed under MIT License.
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Installation & Setup: getting-started/setup.md
+    - Learning Paths: getting-started/learning-paths.md
+
+  - Part 1 - Foundations:
+    - foundations/index.md
+    - Why Quantum Computing?: foundations/why-quantum.md
+    - Classical Computing Recap: foundations/classical-recap.md
+    - Quantum Mechanics Basics: foundations/quantum-mechanics-basics.md
+    - The Qubit: foundations/the-qubit.md
+    - Quantum Entanglement: foundations/entanglement.md
+    - Quantum Measurement: foundations/measurement.md
+
+  - Part 2 - Gates & Circuits:
+    - gates-circuits/index.md
+    - Single Qubit Gates: gates-circuits/single-qubit-gates.md
+    - Multi-Qubit Gates: gates-circuits/multi-qubit-gates.md
+    - Quantum Circuits: gates-circuits/quantum-circuits.md
+    - Circuit Identities: gates-circuits/circuit-identities.md
+
+  - Part 3 - Quantum Stack:
+    - stack/index.md
+    - Hardware Layer: stack/hardware-layer.md
+    - Control & Calibration: stack/control-calibration.md
+    - Quantum Assembly: stack/quantum-assembly.md
+    - Software Frameworks: stack/frameworks.md
+    - Cloud Platforms: stack/cloud-platforms.md
+    - Complete Stack: stack/complete-stack.md
+
+  - Part 4 - Algorithms:
+    - algorithms/index.md
+    - Gate Primitives: algorithms/gate-primitives.md
+    - Deutsch-Jozsa: algorithms/deutsch-jozsa.md
+    - Grover's Algorithm: algorithms/grovers-algorithm.md
+    - Shor's Algorithm: algorithms/shors-algorithm.md
+    - Quantum Phase Estimation: algorithms/quantum-phase-estimation.md
+    - VQE: algorithms/vqe.md
+    - QAOA: algorithms/qaoa.md
+    - Quantum ML: algorithms/quantum-ml.md
+    - Algorithm Comparison: algorithms/algorithm-comparison.md
+
+  - Part 5 - Use Cases:
+    - use-cases/index.md
+    - Drug Discovery: use-cases/drug-discovery.md
+    - Finance: use-cases/finance.md
+    - Cryptography: use-cases/cryptography.md
+    - Optimization: use-cases/optimization.md
+    - Machine Learning: use-cases/machine-learning.md
+    - Materials Science: use-cases/materials-science.md
+    - Climate & Energy: use-cases/climate-energy.md
+    - Maturity Matrix: use-cases/maturity-matrix.md
+    - Current Limitations: use-cases/limitations.md
+
+  - Part 6 - Hands-On:
+    - hands-on/index.md
+    - Setup Guide: hands-on/setup-guide.md
+    - Jupyter Notebooks: hands-on/notebooks.md
+    - Exercises: hands-on/exercises.md
+
+  - Part 7 - Resources:
+    - resources/index.md
+    - Learning Resources: resources/learning-resources.md
+    - Research Papers: resources/research-papers.md
+    - Tools & Platforms: resources/tools-and-platforms.md
+    - Communities: resources/communities.md
+    - Glossary: resources/glossary.md
+    - FAQ: resources/faq.md
+
+  - Contributing:
+    - Contributing Guide: CONTRIBUTING.md
+    - Code of Conduct: CODE_OF_CONDUCT.md
