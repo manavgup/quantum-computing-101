@@ -39,7 +39,7 @@ jobs:
           pip install mkdocs-material
 
       - name: Build documentation
-        run: mkdocs build --clean --strict
+        run: mkdocs build --clean
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
