@@ -49,6 +49,10 @@ where:
 
 **Key property:** Can be in both states simultaneously until measured!
 
+![Classical vs Quantum Bit](illustrations/classical-vs-quantum-bit.png)
+
+*Figure: Classical bits exist in one definite state (0 OR 1), while quantum bits can exist in superposition (0 AND 1 simultaneously). The classical bit shown is in state |0⟩, while the qubit is in superposition α|0⟩ + β|1⟩.*
+
 ### What Makes This Powerful?
 
 **Classical system with n bits:**
@@ -118,6 +122,10 @@ This means we can visualize any qubit state as a point on a sphere!
 
 4. **Any point on surface: Pure quantum state**
    - Defined by two angles: θ (theta) and φ (phi)
+
+![Bloch Sphere Annotated](illustrations/bloch-sphere-annotated.png)
+
+*Figure: The Bloch sphere with complete geometric annotations. Any pure qubit state |ψ⟩ corresponds to a point on the sphere's surface, parameterized by angles θ (polar angle from north pole) and φ (azimuthal angle in the XY plane). The six cardinal states are marked: |0⟩ and |1⟩ at the poles, and |+⟩, |−⟩, |↻⟩, |↺⟩ on the equator.*
 
 ### Mathematical Form
 
@@ -213,6 +221,10 @@ Classical probability distribution over pure states
 **Analogy:**
 - Pure state: Coherent laser beam (all photons in phase)
 - Mixed state: Light bulb (photons with random phases)
+
+![State Vector Visualization](illustrations/state-vector-visualization.png)
+
+*Figure: Three examples of qubit states shown as amplitude bars. Left: Definite state |0⟩ has all amplitude in the |0⟩ component. Middle: Equal superposition |+⟩ has equal amplitudes in both components. Right: Custom superposition with different probability distributions. The normalization condition |α|² + |β|² = 1 is satisfied for all states.*
 
 ### Special Qubit States
 
@@ -511,6 +523,10 @@ Rₙ(θ) = e^(-iθσₙ/2)
 Rotation by angle θ around axis n on Bloch sphere
 ```
 
+![Gate Transformation Sequence](illustrations/gate-transformation-sequence.png)
+
+*Figure: Step-by-step visualization of gate transformations. Starting from |0⟩, applying Hadamard creates |+⟩, then Z gate transforms to |−⟩, and finally another Hadamard results in |1⟩. Each step shows the amplitude distribution, demonstrating how gates manipulate quantum states.*
+
 ### Key Properties
 
 **1. Reversibility**
@@ -554,11 +570,19 @@ Example (3 qubits):
 - Interference effects (amplify correct answers, cancel wrong ones)
 - Entanglement (correlations beyond classical)
 
+![Multi-Qubit Growth](illustrations/multi-qubit-growth.png)
+
+*Figure: Exponential growth of quantum state space. Left: Bar chart showing how the number of simultaneously accessible states grows as 2ⁿ. Right: Comparison table demonstrating the quantum advantage - 50 qubits can represent more states than classical systems with 10¹⁵ bits.*
+
 ### But There's a Catch!
 
 **Measurement problem:**
 - You can only extract n classical bits from n qubits
 - Measurement collapses superposition
+
+![Measurement Collapse](illustrations/measurement-collapse.png)
+
+*Figure: The measurement process destroys superposition. Left: Before measurement, the qubit exists in superposition with amplitudes α=0.6 and β=0.8, giving probabilities 36% and 64%. Middle: Upon measurement, the system randomly collapses based on these probabilities. Right: After measurement, the qubit is in a definite classical state (here |1⟩), and superposition is irreversibly lost.*
 - Must design algorithms carefully to get useful answers
 
 **Decoherence:**
