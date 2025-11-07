@@ -91,20 +91,9 @@ This means we can visualize any qubit state as a point on a sphere!
 
 ### The Bloch Sphere
 
-**Imagine a sphere of radius 1:**
+![Bloch Sphere Annotated](illustrations/bloch-sphere-annotated.png)
 
-```
-         |0⟩ (North Pole)
-          ↑
-          |
-    ------+------ X-axis
-         /|\
-        / | \
-       /  |  \
-         \|/
-          ↓
-         |1⟩ (South Pole)
-```
+*Figure: The Bloch sphere with complete geometric annotations. Any pure qubit state |ψ⟩ corresponds to a point on the sphere's surface, parameterized by angles θ (polar angle from north pole) and φ (azimuthal angle in the XY plane). The six cardinal states are marked: |0⟩ and |1⟩ at the poles, and |+⟩, |−⟩, |↻⟩, |↺⟩ on the equator.*
 
 **Key features:**
 
@@ -122,10 +111,6 @@ This means we can visualize any qubit state as a point on a sphere!
 
 4. **Any point on surface: Pure quantum state**
    - Defined by two angles: θ (theta) and φ (phi)
-
-![Bloch Sphere Annotated](illustrations/bloch-sphere-annotated.png)
-
-*Figure: The Bloch sphere with complete geometric annotations. Any pure qubit state |ψ⟩ corresponds to a point on the sphere's surface, parameterized by angles θ (polar angle from north pole) and φ (azimuthal angle in the XY plane). The six cardinal states are marked: |0⟩ and |1⟩ at the poles, and |+⟩, |−⟩, |↻⟩, |↺⟩ on the equator.*
 
 ### Mathematical Form
 
