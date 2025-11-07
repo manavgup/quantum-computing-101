@@ -3143,11 +3143,11 @@ Output is 1 if inputs are <strong>different</strong>.</p>
 <h4 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h4>
 <p><strong>How long does it take?</strong></p>
 <p><strong>Constant Time: O(1)</strong>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_first_element</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span> <span class="nf">get_first_element</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Always same time, regardless of array size</span>
 </span></code></pre></div></p>
 <p><strong>Linear Time: O(n)</strong>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">find_max</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">max_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">array</span><span class="p">:</span>  <span class="c1"># Check each element once</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="n">max_val</span><span class="p">:</span>
@@ -3156,14 +3156,14 @@ Output is 1 if inputs are <strong>different</strong>.</p>
 </span></code></pre></div>
 Time doubles when array size doubles.</p>
 <p><strong>Quadratic Time: O(n²)</strong>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)):</span>  <span class="c1"># Nested loop!</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>            <span class="c1"># Compare and swap</span>
 </span></code></pre></div>
 Time quadruples when array size doubles.</p>
 <p><strong>Exponential Time: O(2ⁿ)</strong>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">all_subsets</span><span class="p">(</span><span class="nb">set</span><span class="p">):</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span> <span class="nf">all_subsets</span><span class="p">(</span><span class="nb">set</span><span class="p">):</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="c1"># Generate all possible subsets</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="c1"># Set of size n has 2^n subsets</span>
 </span></code></pre></div>
