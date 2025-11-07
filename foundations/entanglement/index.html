@@ -1,0 +1,3810 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive, beginner-friendly guide to quantum computing from fundamentals to applications">
+      
+      
+        <meta name="author" content="Manav Gup">
+      
+      
+      
+        <link rel="prev" href="../the-qubit/">
+      
+      
+        <link rel="next" href="../measurement/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Quantum Entanglement - Quantum Computing 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-entanglement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quantum Computing 101" class="md-header__button md-logo" aria-label="Quantum Computing 101" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Entanglement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/manavgup/quantum-computing-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    manavgup/quantum-computing-101
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/overview/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Part 1 - Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gates-circuits/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 2 - Gates & Circuits
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../stack/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 3 - Quantum Stack
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../algorithms/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 4 - Algorithms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../use-cases/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 5 - Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hands-on/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 6 - Hands-On
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 7 - Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../CONTRIBUTING.md" class="md-tabs__link">
+          
+  
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quantum Computing 101" class="md-nav__button md-logo" aria-label="Quantum Computing 101" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Quantum Computing 101
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/manavgup/quantum-computing-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    manavgup/quantum-computing-101
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/setup.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation & Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/learning-paths.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Paths
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 1 - Foundations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Part 1 - Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Quantum Computing?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classical-recap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classical Computing Recap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum-mechanics-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Mechanics Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-qubit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Qubit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quantum Entanglement
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Entanglement
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Entanglement?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is Entanglement?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-correlation-vs-quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Correlation vs Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantum-entanglement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties of Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Bell States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Bell States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#four-maximally-entangled-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Maximally Entangled States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Bell States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell Measurement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epr-paradox-and-bells-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPR Paradox and Bell's Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EPR Paradox and Bell&#39;s Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einstein-podolsky-rosen-epr-paradox-1935" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einstein-Podolsky-Rosen (EPR) Paradox (1935)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bells-theorem-1964" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell's Theorem (1964)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-inequality-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell Inequality Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Entanglement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-entanglement-two-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bipartite Entanglement (Two Qubits)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipartite-entanglement-3-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multipartite Entanglement (3+ Qubits)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster States
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensor-product-separable-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tensor Product (Separable States)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entangled-states-non-separable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entangled States (Non-Separable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schmidt-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schmidt Decomposition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Entanglement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications of Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quantum-teleportation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Quantum Teleportation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-superdense-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Superdense Coding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quantum-key-distribution-qkd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Quantum Key Distribution (QKD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Quantum Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Quantum Error Correction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-entanglement-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Entanglement in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Entanglement in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entanglement-as-a-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement as a Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entanglement as a Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-resource-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Resource Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Misconceptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Misconceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misconception-1-entanglement-enables-faster-than-light-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 1: "Entanglement enables faster-than-light communication"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-2-measuring-one-entangled-qubit-tells-the-other-what-to-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 2: "Measuring one entangled qubit 'tells' the other what to be"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-3-more-entanglement-more-powerful" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 3: "More entanglement = More powerful"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-4-entanglement-is-fragile-useless-for-practical-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 4: "Entanglement is fragile - useless for practical applications"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 2 - Gates & Circuits
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Part 2 - Gates & Circuits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gates-circuits/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gates-circuits/single-qubit-gates.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Qubit Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gates-circuits/multi-qubit-gates.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Qubit Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gates-circuits/quantum-circuits.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gates-circuits/circuit-identities.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 3 - Quantum Stack
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Part 3 - Quantum Stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/hardware-layer.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware Layer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/control-calibration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control & Calibration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/quantum-assembly.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/frameworks.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/cloud-platforms.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Platforms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stack/complete-stack.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 4 - Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Part 4 - Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/gate-primitives.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gate Primitives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/deutsch-jozsa.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deutsch-Jozsa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/grovers-algorithm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grover's Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/shors-algorithm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shor's Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/quantum-phase-estimation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Phase Estimation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/vqe.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VQE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/qaoa.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QAOA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/quantum-ml.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithms/algorithm-comparison.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithm Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 5 - Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Part 5 - Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/drug-discovery.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drug Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/finance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/cryptography.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/machine-learning.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/materials-science.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Materials Science
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/climate-energy.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Climate & Energy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/maturity-matrix.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maturity Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/limitations.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 6 - Hands-On
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Part 6 - Hands-On
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hands-on/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hands-on/setup-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setup Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hands-on/notebooks.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Notebooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hands-on/exercises.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 7 - Resources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Part 7 - Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/learning-resources.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/research-papers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Papers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/tools-and-platforms.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools & Platforms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/communities.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Communities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/faq.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CODE_OF_CONDUCT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Entanglement?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is Entanglement?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-correlation-vs-quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Correlation vs Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantum-entanglement_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-properties-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Properties of Entanglement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Bell States
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Bell States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#four-maximally-entangled-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Four Maximally Entangled States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Bell States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell Measurement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epr-paradox-and-bells-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      EPR Paradox and Bell's Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EPR Paradox and Bell&#39;s Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einstein-podolsky-rosen-epr-paradox-1935" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einstein-Podolsky-Rosen (EPR) Paradox (1935)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bells-theorem-1964" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell's Theorem (1964)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bell-inequality-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bell Inequality Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Entanglement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bipartite-entanglement-two-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bipartite Entanglement (Two Qubits)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipartite-entanglement-3-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multipartite Entanglement (3+ Qubits)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster States
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensor-product-separable-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tensor Product (Separable States)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entangled-states-non-separable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entangled States (Non-Separable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schmidt-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schmidt Decomposition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of Entanglement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications of Entanglement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quantum-teleportation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Quantum Teleportation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-superdense-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Superdense Coding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-quantum-key-distribution-qkd" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Quantum Key Distribution (QKD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Quantum Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Quantum Error Correction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-entanglement-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Entanglement in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Entanglement in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlled Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entanglement-as-a-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement as a Resource
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entanglement as a Resource">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-resource-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Resource Theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Misconceptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Misconceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misconception-1-entanglement-enables-faster-than-light-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 1: "Entanglement enables faster-than-light communication"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-2-measuring-one-entangled-qubit-tells-the-other-what-to-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 2: "Measuring one entangled qubit 'tells' the other what to be"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-3-more-entanglement-more-powerful" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 3: "More entanglement = More powerful"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misconception-4-entanglement-is-fragile-useless-for-practical-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misconception 4: "Entanglement is fragile - useless for practical applications"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-quantum-entanglement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary: Quantum Entanglement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Your Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quantum-entanglement">Quantum Entanglement<a class="headerlink" href="#quantum-entanglement" title="Permanent link">&para;</a></h1>
+<p><strong>Time:</strong> 35 minutes | <strong>Difficulty:</strong> 🟡 Intermediate</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Entanglement is what Einstein famously called "spooky action at a distance" - and it's arguably the most powerful resource in quantum computing. When qubits become entangled, they form correlations that are impossible to create classically, enabling computational capabilities far beyond traditional computers.</p>
+<p><strong>What you'll learn:</strong>
+- What entanglement really is (and isn't)
+- Bell states (maximally entangled pairs)
+- EPR paradox and Bell's theorem
+- How entanglement enables quantum algorithms
+- Creating and measuring entanglement</p>
+<hr />
+<h2 id="what-is-entanglement">What Is Entanglement?<a class="headerlink" href="#what-is-entanglement" title="Permanent link">&para;</a></h2>
+<h3 id="classical-correlation-vs-quantum-entanglement">Classical Correlation vs Quantum Entanglement<a class="headerlink" href="#classical-correlation-vs-quantum-entanglement" title="Permanent link">&para;</a></h3>
+<p>Let's start with what entanglement is NOT.</p>
+<p><strong>Classical correlation example:</strong></p>
+<p>Take two coins, paint one red and one blue, put them in separate boxes, and shuffle:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Box A: Red coin (you don&#39;t know which box)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Box B: Blue coin
+</span></code></pre></div>
+<p>Open box A:
+- If red: Box B must have blue
+- If blue: Box A must have red</p>
+<p><strong>This is classical correlation:</strong> The outcomes were determined before you looked. You just didn't know which was which.</p>
+<p><strong>Quantum entanglement is different!</strong></p>
+<h3 id="quantum-entanglement_1">Quantum Entanglement<a class="headerlink" href="#quantum-entanglement_1" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Two or more qubits are entangled when their quantum states cannot be described independently, even when separated by vast distances.</p>
+<p><strong>Mathematical definition:</strong></p>
+<p>A two-qubit state |ψ⟩ is entangled if it cannot be written as:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>|ψ⟩ = (α|0⟩ + β|1⟩) ⊗ (γ|0⟩ + δ|1⟩)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>If it cannot be factored into independent single-qubit states, it&#39;s entangled!
+</span></code></pre></div></p>
+<p><strong>Example of entangled state:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>|Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>This CANNOT be written as single-qubit states!
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Try: (a|0⟩ + b|1⟩)(c|0⟩ + d|1⟩) = ac|00⟩ + ad|01⟩ + bc|10⟩ + bd|11⟩
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>No values of a, b, c, d give you (|00⟩ + |11⟩)/√2
+</span></code></pre></div></p>
+<h3 id="key-properties-of-entanglement">Key Properties of Entanglement<a class="headerlink" href="#key-properties-of-entanglement" title="Permanent link">&para;</a></h3>
+<p><strong>1. Non-local correlations</strong>
+- Measuring one qubit instantly affects the other
+- True even if qubits are light-years apart!
+- But: Can't send information faster than light (no paradox)</p>
+<p><strong>2. Measurement collapse</strong>
+- Measuring one qubit collapses both
+- If you measure first qubit as 0, second must be 0 (for |Φ⁺⟩)
+- Correlation is perfect, instantaneous, and quantum</p>
+<p><strong>3. No classical explanation</strong>
+- Bell's theorem proves these correlations can't be explained by hidden variables
+- Nature is genuinely probabilistic at quantum level</p>
+<p><strong>4. Fragile but powerful</strong>
+- Entanglement is easily destroyed (decoherence)
+- But enables quantum algorithms, teleportation, cryptography</p>
+<hr />
+<h2 id="the-bell-states">The Bell States<a class="headerlink" href="#the-bell-states" title="Permanent link">&para;</a></h2>
+<h3 id="four-maximally-entangled-states">Four Maximally Entangled States<a class="headerlink" href="#four-maximally-entangled-states" title="Permanent link">&para;</a></h3>
+<p>The <strong>Bell states</strong> (or EPR pairs) are the four maximally entangled two-qubit states:</p>
+<p><strong>Φ⁺ (Phi-plus):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>|Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Measurement outcomes:
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>|00⟩ with 50% probability
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>|11⟩ with 50% probability
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Perfect correlation: Both qubits always give same result!
+</span></code></pre></div></p>
+<p><strong>Φ⁻ (Phi-minus):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>|Φ⁻⟩ = (|00⟩ − |11⟩)/√2
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Same measurement probabilities as Φ⁺
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Different relative phase
+</span></code></pre></div></p>
+<p><strong>Ψ⁺ (Psi-plus):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>|Ψ⁺⟩ = (|01⟩ + |10⟩)/√2
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Measurement outcomes:
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>|01⟩ with 50% probability
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>|10⟩ with 50% probability
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Perfect anti-correlation: Qubits always give opposite results!
+</span></code></pre></div></p>
+<p><strong>Ψ⁻ (Psi-minus):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>|Ψ⁻⟩ = (|01⟩ − |10⟩)/√2
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Same measurement probabilities as Ψ⁺
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Different relative phase
+</span></code></pre></div></p>
+<h3 id="creating-bell-states">Creating Bell States<a class="headerlink" href="#creating-bell-states" title="Permanent link">&para;</a></h3>
+<p><strong>Starting from |00⟩:</strong></p>
+<p>To create |Φ⁺⟩ = (|00⟩ + |11⟩)/√2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Step 1: Apply Hadamard to first qubit
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>|00⟩ → (|0⟩ + |1⟩)/√2 ⊗ |0⟩ = (|00⟩ + |10⟩)/√2
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Step 2: Apply CNOT (controlled-NOT) with first qubit as control
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>(|00⟩ + |10⟩)/√2 → (|00⟩ + |11⟩)/√2 = |Φ⁺⟩
+</span></code></pre></div>
+<p><strong>Circuit diagram:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>q₀: ──H────●────
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>           │
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>q₁: ───────X────
+</span></code></pre></div></p>
+<p><strong>This is the most common entanglement circuit!</strong></p>
+<p><img alt="Bell State Circuit" src="../illustrations/bell-state-circuit.png" /></p>
+<p><em>Figure 1: Quantum circuit for creating a Bell state |Φ⁺⟩. A Hadamard gate (H) creates superposition on the first qubit, followed by a CNOT gate that entangles the two qubits. The resulting state (|00⟩ + |11⟩)/√2 is maximally entangled.</em></p>
+<p><strong>Creating other Bell states:</strong></p>
+<p>From |Φ⁺⟩, apply:
+- Nothing → |Φ⁺⟩
+- X on qubit 1 → |Ψ⁺⟩
+- Z on qubit 0 → |Φ⁻⟩
+- Z on qubit 0 and X on qubit 1 → |Ψ⁻⟩</p>
+<h3 id="bell-measurement">Bell Measurement<a class="headerlink" href="#bell-measurement" title="Permanent link">&para;</a></h3>
+<p><strong>Reverse process:</strong> Entangling gate + Hadamard transforms Bell states back to computational basis.</p>
+<p><strong>Why useful:</strong> Quantum teleportation, superdense coding, error correction.</p>
+<hr />
+<h2 id="epr-paradox-and-bells-theorem">EPR Paradox and Bell's Theorem<a class="headerlink" href="#epr-paradox-and-bells-theorem" title="Permanent link">&para;</a></h2>
+<h3 id="einstein-podolsky-rosen-epr-paradox-1935">Einstein-Podolsky-Rosen (EPR) Paradox (1935)<a class="headerlink" href="#einstein-podolsky-rosen-epr-paradox-1935" title="Permanent link">&para;</a></h3>
+<p>Einstein, Podolsky, and Rosen posed a thought experiment to show quantum mechanics was "incomplete."</p>
+<p><strong>Their argument:</strong></p>
+<ol>
+<li>Create entangled pair: |Φ⁺⟩ = (|00⟩ + |11⟩)/√2</li>
+<li>Separate the qubits by vast distance (light-years!)</li>
+<li>Measure first qubit → Get 0 or 1</li>
+<li>Second qubit instantly becomes the same!</li>
+</ol>
+<p><strong>EPR's conclusion:</strong>
+- Either information travels faster than light (impossible per relativity)
+- Or the particles had predetermined values all along (hidden variables)
+- Therefore: Quantum mechanics is incomplete!</p>
+<p><strong>Einstein's quote:</strong> "Spooky action at a distance" - he didn't believe it!</p>
+<h3 id="bells-theorem-1964">Bell's Theorem (1964)<a class="headerlink" href="#bells-theorem-1964" title="Permanent link">&para;</a></h3>
+<p>John Stewart Bell proved EPR wrong with an elegant theorem:</p>
+<p><strong>Statement:</strong> No theory of local hidden variables can reproduce all predictions of quantum mechanics.</p>
+<p><strong>What this means:</strong>
+- There are no "hidden instructions" carried by particles
+- Quantum correlations are stronger than any classical correlation
+- Nature is genuinely probabilistic and non-local</p>
+<h3 id="bell-inequality-test">Bell Inequality Test<a class="headerlink" href="#bell-inequality-test" title="Permanent link">&para;</a></h3>
+<p><strong>Classical prediction (hidden variables):</strong></p>
+<p>For certain combinations of measurements:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>|⟨A₁B₁⟩ + ⟨A₁B₂⟩ + ⟨A₂B₁⟩ − ⟨A₂B₂⟩| ≤ 2
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>(Bell&#39;s inequality - must hold for classical systems)
+</span></code></pre></div></p>
+<p><strong>Quantum mechanics predicts:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Value = 2√2 ≈ 2.828
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Violates Bell&#39;s inequality!
+</span></code></pre></div></p>
+<p><strong>Experiments:</strong> Performed thousands of times since 1970s
+- <strong>Result:</strong> Quantum mechanics wins! Bell inequality is violated.
+- <strong>2022 Nobel Prize</strong> awarded to Aspect, Clauser, and Zeilinger for experimental verification</p>
+<p><strong>Implications:</strong>
+1. Nature is genuinely quantum (no hidden variables)
+2. Quantum correlations are stronger than classical
+3. This is what makes quantum computing possible!</p>
+<hr />
+<h2 id="types-of-entanglement">Types of Entanglement<a class="headerlink" href="#types-of-entanglement" title="Permanent link">&para;</a></h2>
+<h3 id="bipartite-entanglement-two-qubits">Bipartite Entanglement (Two Qubits)<a class="headerlink" href="#bipartite-entanglement-two-qubits" title="Permanent link">&para;</a></h3>
+<p><strong>Product state (not entangled):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>|ψ⟩ = |0⟩ ⊗ |+⟩ = |0⟩|+⟩
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Can be factored into independent parts
+</span></code></pre></div></p>
+<p><strong>Entangled state:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>|ψ⟩ = (|01⟩ + |10⟩)/√2
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Cannot be factored!
+</span></code></pre></div></p>
+<p><strong>Measuring entanglement:</strong>
+- <strong>Concurrence:</strong> Ranges from 0 (separable) to 1 (maximally entangled)
+- <strong>Entropy of entanglement:</strong> Information theoretic measure</p>
+<h3 id="multipartite-entanglement-3-qubits">Multipartite Entanglement (3+ Qubits)<a class="headerlink" href="#multipartite-entanglement-3-qubits" title="Permanent link">&para;</a></h3>
+<p>Multiple qubits can be entangled in complex ways.</p>
+<p><strong>GHZ State (Greenberger-Horne-Zeilinger):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>|GHZ⟩ = (|000⟩ + |111⟩)/√2
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>All three qubits maximally entangled
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Measurement: All 0s or all 1s (never mixed)
+</span></code></pre></div></p>
+<p><strong>W State:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>|W⟩ = (|001⟩ + |010⟩ + |100⟩)/√3
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Different entanglement structure than GHZ
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>More robust to qubit loss
+</span></code></pre></div></p>
+<p><strong>Difference:</strong>
+- <strong>GHZ:</strong> Lose one qubit → remaining qubits not entangled
+- <strong>W:</strong> Lose one qubit → remaining qubits still entangled!</p>
+<p><strong>Graph states:</strong>
+- Qubits at vertices, entanglement along edges
+- Used in quantum error correction
+- Measurement-based quantum computing</p>
+<h3 id="cluster-states">Cluster States<a class="headerlink" href="#cluster-states" title="Permanent link">&para;</a></h3>
+<p><strong>Definition:</strong> Special type of graph state used for one-way quantum computing.</p>
+<p><strong>Properties:</strong>
+- Create large entangled state upfront
+- Perform computation by sequential measurements
+- Different paradigm from gate-based computing</p>
+<hr />
+<h2 id="mathematical-description">Mathematical Description<a class="headerlink" href="#mathematical-description" title="Permanent link">&para;</a></h2>
+<h3 id="tensor-product-separable-states">Tensor Product (Separable States)<a class="headerlink" href="#tensor-product-separable-states" title="Permanent link">&para;</a></h3>
+<p><strong>Two independent qubits:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>|ψ⟩ = |ψ₁⟩ ⊗ |ψ₂⟩
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Example:
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>|+⟩ ⊗ |0⟩ = (|0⟩ + |1⟩)/√2 ⊗ |0⟩
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>          = (|00⟩ + |10⟩)/√2
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>This is NOT entangled (it&#39;s a product state)
+</span></code></pre></div></p>
+<p><strong>Dimension:</strong> 2 × 2 = 4 dimensional space</p>
+<h3 id="entangled-states-non-separable">Entangled States (Non-Separable)<a class="headerlink" href="#entangled-states-non-separable" title="Permanent link">&para;</a></h3>
+<p><strong>Cannot be written as tensor product:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>|Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Try to factor: Impossible!
+</span></code></pre></div></p>
+<h3 id="density-matrices">Density Matrices<a class="headerlink" href="#density-matrices" title="Permanent link">&para;</a></h3>
+<p><strong>Pure separable state:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ρ = |ψ₁⟩⟨ψ₁| ⊗ |ψ₂⟩⟨ψ₂|
+</span></code></pre></div></p>
+<p><strong>Pure entangled state:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ρ = |Φ⁺⟩⟨Φ⁺|
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Cannot be written as product!
+</span></code></pre></div></p>
+<p><strong>Test for entanglement:</strong>
+- Compute partial trace
+- Check if result is pure or mixed
+- Mixed → Entangled!</p>
+<h3 id="schmidt-decomposition">Schmidt Decomposition<a class="headerlink" href="#schmidt-decomposition" title="Permanent link">&para;</a></h3>
+<p><strong>Theorem:</strong> Any pure two-qubit state can be written:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>|ψ⟩ = λ₀|a₀⟩|b₀⟩ + λ₁|a₁⟩|b₁⟩
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>where {|a₀⟩, |a₁⟩} and {|b₀⟩, |b₁⟩} are orthonormal
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>λ₀, λ₁ ≥ 0 are Schmidt coefficients
+</span></code></pre></div></p>
+<p><strong>Entanglement measure:</strong>
+- If only one λᵢ ≠ 0: Separable
+- If both λᵢ ≠ 0: Entangled
+- If λ₀ = λ₁: Maximally entangled</p>
+<hr />
+<h2 id="applications-of-entanglement">Applications of Entanglement<a class="headerlink" href="#applications-of-entanglement" title="Permanent link">&para;</a></h2>
+<h3 id="1-quantum-teleportation">1. Quantum Teleportation<a class="headerlink" href="#1-quantum-teleportation" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Transfer quantum state from Alice to Bob using:
+- Shared entangled pair
+- Classical communication (2 bits)</p>
+<p><strong>Protocol:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>1. Alice and Bob share |Φ⁺⟩ = (|00⟩ + |11⟩)/√2
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>2. Alice has unknown state |ψ⟩ = α|0⟩ + β|1⟩ to send
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>3. Alice performs Bell measurement on her qubits
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>4. Alice sends 2 classical bits to Bob
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>5. Bob applies correction based on received bits
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>6. Bob now has state |ψ⟩!
+</span></code></pre></div></p>
+<p><strong>Key points:</strong>
+- Original state destroyed (no-cloning theorem)
+- Requires classical communication (no faster-than-light)
+- State transferred without physically moving qubit!</p>
+<p><strong>Real experiments:</strong> Successfully teleported over 100s of kilometers!</p>
+<h3 id="2-superdense-coding">2. Superdense Coding<a class="headerlink" href="#2-superdense-coding" title="Permanent link">&para;</a></h3>
+<p><strong>Goal:</strong> Send 2 classical bits using 1 qubit!</p>
+<p><strong>Protocol:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>1. Alice and Bob share |Φ⁺⟩
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>2. Alice wants to send 2 bits: 00, 01, 10, or 11
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>3. Alice applies gate to her qubit based on bits:
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>   - 00: Nothing (Identity) → |Φ⁺⟩
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>   - 01: X gate → |Ψ⁺⟩
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>   - 10: Z gate → |Φ⁻⟩
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>   - 11: ZX gates → |Ψ⁻⟩
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>4. Alice sends her qubit to Bob
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>5. Bob performs Bell measurement
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>6. Bob determines which 2 bits were sent!
+</span></code></pre></div></p>
+<p><strong>Efficiency:</strong> 2 classical bits per 1 qubit (double the classical rate!)</p>
+<h3 id="3-quantum-key-distribution-qkd">3. Quantum Key Distribution (QKD)<a class="headerlink" href="#3-quantum-key-distribution-qkd" title="Permanent link">&para;</a></h3>
+<p><strong>BB84 Protocol (simplified):</strong></p>
+<p>Entanglement ensures secure key distribution:
+- Any eavesdropper disturbs entangled state
+- Disturbance is detectable
+- Guaranteed secure communication!</p>
+<p><strong>Real-world:</strong> Banks and governments use this today!</p>
+<h3 id="4-quantum-algorithms">4. Quantum Algorithms<a class="headerlink" href="#4-quantum-algorithms" title="Permanent link">&para;</a></h3>
+<p><strong>Entanglement is essential for:</strong></p>
+<p><strong>Shor's Algorithm (Factoring):</strong>
+- Entangles work and answer qubits
+- Creates quantum Fourier transform
+- Exponential speedup relies on entanglement</p>
+<p><strong>Grover's Search:</strong>
+- Entangles target state with other qubits
+- Amplitude amplification through entanglement
+- Quadratic speedup</p>
+<p><strong>VQE (Variational Quantum Eigensolver):</strong>
+- Entangles qubits to represent molecular states
+- Enables quantum chemistry simulations</p>
+<p><strong>QAOA (Quantum Approximate Optimization):</strong>
+- Entanglement creates correlations
+- Solves combinatorial optimization problems</p>
+<h3 id="5-quantum-error-correction">5. Quantum Error Correction<a class="headerlink" href="#5-quantum-error-correction" title="Permanent link">&para;</a></h3>
+<p><strong>Problem:</strong> Qubits decohere and lose information.</p>
+<p><strong>Solution:</strong> Spread quantum information across many entangled qubits!</p>
+<p><strong>Example: 3-qubit bit-flip code</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>|0⟩ → |000⟩
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>|1⟩ → |111⟩
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>General: α|0⟩ + β|1⟩ → α|000⟩ + β|111⟩ (entangled state!)
+</span></code></pre></div></p>
+<p>If one qubit flips, can detect and correct using measurements that don't reveal the state.</p>
+<p><strong>Advanced codes:</strong>
+- Surface code: Most promising for large-scale quantum computers
+- Uses 2D lattice of entangled qubits
+- Local error detection</p>
+<hr />
+<h2 id="creating-entanglement-in-practice">Creating Entanglement in Practice<a class="headerlink" href="#creating-entanglement-in-practice" title="Permanent link">&para;</a></h2>
+<h3 id="controlled-gates">Controlled Gates<a class="headerlink" href="#controlled-gates" title="Permanent link">&para;</a></h3>
+<p><strong>CNOT (Controlled-NOT):</strong></p>
+<p>Most common for creating entanglement:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Circuit to create |Φ⁺⟩:
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>|00⟩ → H ⊗ I → (|00⟩ + |10⟩)/√2 → CNOT → (|00⟩ + |11⟩)/√2
+</span></code></pre></div></p>
+<p><strong>Matrix:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>CNOT = [1  0  0  0]
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>       [0  1  0  0]
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>       [0  0  0  1]
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>       [0  0  1  0]
+</span></code></pre></div></p>
+<p><strong>CZ (Controlled-Z):</strong></p>
+<p>Alternative entangling gate:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>CZ|00⟩ = |00⟩
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>CZ|01⟩ = |01⟩
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>CZ|10⟩ = |10⟩
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>CZ|11⟩ = −|11⟩
+</span></code></pre></div></p>
+<p><strong>Physical implementations:</strong>
+- <strong>Superconducting:</strong> Tune qubit frequencies to enable interaction
+- <strong>Trapped ions:</strong> Shared motional modes couple ions
+- <strong>Neutral atoms:</strong> Rydberg blockade creates entanglement
+- <strong>Photonic:</strong> Beam splitters and interference</p>
+<h3 id="entanglement-verification">Entanglement Verification<a class="headerlink" href="#entanglement-verification" title="Permanent link">&para;</a></h3>
+<p><strong>How do we know qubits are entangled?</strong></p>
+<p><strong>1. State tomography:</strong>
+- Measure in multiple bases
+- Reconstruct density matrix
+- Check if separable or entangled
+- Expensive: 4ⁿ measurements for n qubits!</p>
+<p><strong>2. Witness operators:</strong>
+- Measure expectation values
+- If violates classical bound → Entangled
+- More efficient than full tomography</p>
+<p><strong>3. Bell inequality test:</strong>
+- Perform CHSH experiment
+- Calculate S value
+- If S &gt; 2 → Entangled (classical limit is 2)</p>
+<hr />
+<h2 id="entanglement-as-a-resource">Entanglement as a Resource<a class="headerlink" href="#entanglement-as-a-resource" title="Permanent link">&para;</a></h2>
+<h3 id="quantum-resource-theory">Quantum Resource Theory<a class="headerlink" href="#quantum-resource-theory" title="Permanent link">&para;</a></h3>
+<p><strong>Key idea:</strong> Entanglement is like a fuel that quantum algorithms consume.</p>
+<p><strong>Free operations:</strong>
+- Local operations (gates on individual qubits)
+- Classical communication (LOCC protocols)</p>
+<p><strong>Costly operations:</strong>
+- Creating entanglement
+- Maintaining entanglement (fighting decoherence)</p>
+<p><strong>Quantifying entanglement:</strong>
+- <strong>Entropy of entanglement:</strong> S = −Tr(ρₐ log ρₐ)
+- <strong>Entanglement cost:</strong> How much Bell pairs needed to create state
+- <strong>Distillable entanglement:</strong> How much pure entanglement can be extracted</p>
+<h3 id="entanglement-budget">Entanglement Budget<a class="headerlink" href="#entanglement-budget" title="Permanent link">&para;</a></h3>
+<p><strong>Quantum algorithm analysis:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Algorithm entanglement requirement:
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>- Depth: How many layers of entangling gates
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>- Width: How many qubits need to be entangled
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>- Quality: How pure must the entanglement be
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>Example - Grover&#39;s Search on N items:
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>- O(√N) entangling operations
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>- O(log N) qubits entangled
+</span></code></pre></div>
+<p><strong>Practical constraint:</strong> More entanglement → More error → Need error correction → More physical qubits!</p>
+<hr />
+<h2 id="common-misconceptions">Common Misconceptions<a class="headerlink" href="#common-misconceptions" title="Permanent link">&para;</a></h2>
+<h3 id="misconception-1-entanglement-enables-faster-than-light-communication">Misconception 1: "Entanglement enables faster-than-light communication"<a class="headerlink" href="#misconception-1-entanglement-enables-faster-than-light-communication" title="Permanent link">&para;</a></h3>
+<p><strong>Truth:</strong> No! You cannot send information faster than light with entanglement.</p>
+<p><strong>Why:</strong>
+- Individual measurements give random results
+- Correlation only visible when comparing results classically
+- Classical communication needed → Speed limited by light</p>
+<p><strong>Relativity is safe!</strong></p>
+<h3 id="misconception-2-measuring-one-entangled-qubit-tells-the-other-what-to-be">Misconception 2: "Measuring one entangled qubit 'tells' the other what to be"<a class="headerlink" href="#misconception-2-measuring-one-entangled-qubit-tells-the-other-what-to-be" title="Permanent link">&para;</a></h3>
+<p><strong>Truth:</strong> No causal influence. Better description: The pair always had correlated properties, only revealed upon measurement.</p>
+<p><strong>But:</strong> No hidden variable theory works (Bell's theorem). It's genuinely quantum!</p>
+<h3 id="misconception-3-more-entanglement-more-powerful">Misconception 3: "More entanglement = More powerful"<a class="headerlink" href="#misconception-3-more-entanglement-more-powerful" title="Permanent link">&para;</a></h3>
+<p><strong>Truth:</strong> Depends on the problem!</p>
+<p><strong>Examples:</strong>
+- Some algorithms need lots of entanglement (Shor's)
+- Some need little (certain VQE circuits)
+- Classical simulation difficulty often relates to entanglement</p>
+<h3 id="misconception-4-entanglement-is-fragile-useless-for-practical-applications">Misconception 4: "Entanglement is fragile - useless for practical applications"<a class="headerlink" href="#misconception-4-entanglement-is-fragile-useless-for-practical-applications" title="Permanent link">&para;</a></h3>
+<p><strong>Truth:</strong> Fragile yes, but we have solutions!</p>
+<p><strong>Solutions:</strong>
+- Quantum error correction
+- Decoherence-free subspaces
+- Dynamical decoupling
+- Better qubit engineering</p>
+<p><strong>Real applications work today:</strong> QKD, quantum sensors, small quantum computers</p>
+<hr />
+<h2 id="summary-quantum-entanglement">Summary: Quantum Entanglement<a class="headerlink" href="#summary-quantum-entanglement" title="Permanent link">&para;</a></h2>
+<p><strong>What is entanglement?</strong>
+- Correlation stronger than any classical correlation
+- Qubits cannot be described independently
+- Measured states are perfectly correlated</p>
+<p><strong>Bell states:</strong>
+- Four maximally entangled two-qubit states
+- Created with H + CNOT gates
+- Foundation for quantum protocols</p>
+<p><strong>EPR and Bell:</strong>
+- No hidden variable theory works
+- Quantum correlations are real and non-local
+- Experimentally verified (Nobel Prize 2022)</p>
+<p><strong>Applications:</strong>
+- Quantum teleportation
+- Superdense coding
+- Quantum cryptography (QKD)
+- Quantum algorithms (Shor's, Grover's, etc.)
+- Quantum error correction</p>
+<p><strong>Challenges:</strong>
+- Fragile (decoherence)
+- Difficult to create and maintain
+- Verification is expensive
+- But: Essential for quantum advantage!</p>
+<hr />
+<h2 id="check-your-understanding">Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permanent link">&para;</a></h2>
+<p><strong>Question 1:</strong> Can the state (|00⟩ + |01⟩)/√2 be written as a product of two single-qubit states?</p>
+<details>
+<summary>Answer</summary>
+
+Yes! (|00⟩ + |01⟩)/√2 = |0⟩ ⊗ (|0⟩ + |1⟩)/√2 = |0⟩ ⊗ |+⟩. This is NOT entangled, just a product state.
+</details>
+
+<p><strong>Question 2:</strong> What gates do you need to create a Bell state |Φ⁺⟩ from |00⟩?</p>
+<details>
+<summary>Answer</summary>
+
+Hadamard gate on first qubit, then CNOT with first qubit as control:
+|00⟩ → H₀ → (|00⟩ + |10⟩)/√2 → CNOT → (|00⟩ + |11⟩)/√2 = |Φ⁺⟩
+</details>
+
+<p><strong>Question 3:</strong> If two qubits are in state |Φ⁺⟩ = (|00⟩ + |11⟩)/√2, you measure the first qubit and get 1. What will you measure for the second qubit?</p>
+<details>
+<summary>Answer</summary>
+
+You'll definitely measure 1 (100% probability). The entangled state ensures perfect correlation - both qubits always give the same result for |Φ⁺⟩.
+</details>
+
+<p><strong>Question 4:</strong> Can you use entanglement to send a message faster than light?</p>
+<details>
+<summary>Answer</summary>
+
+No! Individual measurement results are random. The correlation only becomes apparent when you compare results using classical communication (limited by speed of light). Relativity is preserved.
+</details>
+
+<p><strong>Question 5:</strong> What's the difference between GHZ and W states?</p>
+<details>
+<summary>Answer</summary>
+
+- **GHZ:** (|000⟩ + |111⟩)/√2 - Maximally entangled but fragile. Losing one qubit destroys all entanglement.
+- **W:** (|001⟩ + |010⟩ + |100⟩)/√3 - More robust. Remaining qubits stay entangled if one is lost.
+
+Different types of multipartite entanglement!
+</details>
+
+<hr />
+<h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Now that you understand entanglement, let's explore how measurement works in quantum systems:</p>
+<p><strong>Next:</strong> <a href="./06-measurement.md">Quantum Measurement</a>
+- Projective measurements
+- POVM (Generalized measurements)
+- Measurement basis choice
+- Quantum state tomography</p>
+<p><strong>Related:</strong>
+- <a href="./04-the-qubit.md">The Qubit</a> - Single qubit states
+- <a href="../02-gates-and-circuits/02-multi-qubit-gates.md">Multi-Qubit Gates</a> - Creating entanglement</p>
+<hr />
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<p><strong>Papers:</strong>
+- Einstein, Podolsky, Rosen: "Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?" (1935)
+- John Bell: "On the Einstein Podolsky Rosen Paradox" (1964)</p>
+<p><strong>Books:</strong>
+- <em>Quantum Entanglement</em> by Jed Brody
+- <em>Entanglement</em> by Amir D. Aczel (Popular science)</p>
+<p><strong>Videos:</strong>
+- <a href="https://www.youtube.com/watch?v=zcqZHYo7ONs">Bell's Theorem: The Quantum Venn Diagram Paradox</a> - MinutePhysics
+- <a href="https://www.youtube.com/watch?v=ZuvK-od647c">Quantum Entanglement</a> - PBS Space Time</p>
+<p><strong>Interactive:</strong>
+- <a href="https://github.com/Quantum-Game/bra-ket-vue">Bell's Theorem Visualization</a>
+- Try creating Bell states in <a href="https://algassert.com/quirk">Quirk</a></p>
+<hr />
+<p><strong>💡 Key Insight:</strong> Entanglement is THE feature that separates quantum from classical computing. It's not just parallelism (superposition), it's the correlations between qubits that enable quantum algorithms to solve problems classical computers cannot!</p>
+<hr />
+<p><em>Ready to understand how measurement affects quantum systems? Final foundational topic ahead!</em> 🚀</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Manav Gup. Licensed under MIT License.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/manavgup/quantum-computing-101" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/manavgup" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

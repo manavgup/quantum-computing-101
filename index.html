@@ -1,0 +1,3270 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive, beginner-friendly guide to quantum computing from fundamentals to applications">
+      
+      
+        <meta name="author" content="Manav Gup">
+      
+      
+      
+      
+        <link rel="next" href="getting-started/overview/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Quantum Computing 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-computing-101-from-fundamentals-to-applications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Quantum Computing 101" class="md-header__button md-logo" aria-label="Quantum Computing 101" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/manavgup/quantum-computing-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    manavgup/quantum-computing-101
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="getting-started/overview/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="foundations/" class="md-tabs__link">
+          
+  
+  
+  Part 1 - Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="gates-circuits/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 2 - Gates & Circuits
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="stack/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 3 - Quantum Stack
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="algorithms/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 4 - Algorithms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="use-cases/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 5 - Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="hands-on/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 6 - Hands-On
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="resources/index.md" class="md-tabs__link">
+          
+  
+  
+  Part 7 - Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="CONTRIBUTING.md" class="md-tabs__link">
+          
+  
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Quantum Computing 101" class="md-nav__button md-logo" aria-label="Quantum Computing 101" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    Quantum Computing 101
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/manavgup/quantum-computing-101" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    manavgup/quantum-computing-101
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 About This Repository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 About This Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes This Different?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-for-hands-on-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation (for hands-on coding)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Learning Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Learning Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-1-complete-beginner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 Path 1: Complete Beginner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-2-software-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟡 Path 2: Software Developer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-3-researcherscientist" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔴 Path 3: Researcher/Scientist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-4-businessexecutive" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Path 4: Business/Executive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-quantum-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Quantum Foundations 🎯
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-quantum-gates-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Quantum Gates &amp; Circuits ⚡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-the-quantum-computing-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: The Quantum Computing Stack 🏗️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Quantum Algorithms 🧮
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-use-cases-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Use Cases &amp; Applications 💼
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-6-hands-on-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 6: Hands-On Learning 🔬
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-7-resources-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 7: Resources &amp; Community 📖
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Visual Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Technology Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Progress Tracker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Connect &amp; Learn More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Repository Stats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Learning Outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙏 Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/setup.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation & Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/learning-paths.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Paths
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 1 - Foundations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Part 1 - Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Part 1: Quantum Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/why-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Quantum Computing?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/classical-recap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classical Computing Recap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/quantum-mechanics-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Mechanics Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/the-qubit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Qubit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Entanglement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foundations/measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 2 - Gates & Circuits
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Part 2 - Gates & Circuits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gates-circuits/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gates-circuits/single-qubit-gates.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Qubit Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gates-circuits/multi-qubit-gates.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Qubit Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gates-circuits/quantum-circuits.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Circuits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gates-circuits/circuit-identities.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Circuit Identities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 3 - Quantum Stack
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Part 3 - Quantum Stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/hardware-layer.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware Layer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/control-calibration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control & Calibration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/quantum-assembly.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/frameworks.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/cloud-platforms.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Platforms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack/complete-stack.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 4 - Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Part 4 - Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/gate-primitives.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gate Primitives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/deutsch-jozsa.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deutsch-Jozsa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/grovers-algorithm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grover's Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/shors-algorithm.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shor's Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/quantum-phase-estimation.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Phase Estimation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/vqe.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VQE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/qaoa.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QAOA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/quantum-ml.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="algorithms/algorithm-comparison.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithm Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 5 - Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Part 5 - Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/drug-discovery.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drug Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/finance.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/cryptography.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cryptography
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/machine-learning.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/materials-science.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Materials Science
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/climate-energy.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Climate & Energy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/maturity-matrix.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maturity Matrix
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-cases/limitations.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 6 - Hands-On
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Part 6 - Hands-On
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hands-on/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hands-on/setup-guide.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setup Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hands-on/notebooks.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Notebooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hands-on/exercises.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 7 - Resources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Part 7 - Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/learning-resources.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/research-papers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Papers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/tools-and-platforms.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools & Platforms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/communities.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Communities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/glossary.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resources/faq.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CONTRIBUTING.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CODE_OF_CONDUCT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-this-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 About This Repository
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 About This Repository">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes This Different?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-for-hands-on-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation (for hands-on coding)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Learning Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Learning Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#path-1-complete-beginner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟢 Path 1: Complete Beginner
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-2-software-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟡 Path 2: Software Developer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-3-researcherscientist" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔴 Path 3: Researcher/Scientist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-4-businessexecutive" class="md-nav__link">
+    <span class="md-ellipsis">
+      💼 Path 4: Business/Executive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-quantum-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Quantum Foundations 🎯
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-quantum-gates-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Quantum Gates &amp; Circuits ⚡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-the-quantum-computing-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: The Quantum Computing Stack 🏗️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Quantum Algorithms 🧮
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-use-cases-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Use Cases &amp; Applications 💼
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-6-hands-on-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 6: Hands-On Learning 🔬
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-7-resources-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 7: Resources &amp; Community 📖
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Visual Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Technology Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Progress Tracker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Contributing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤝 Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Connect &amp; Learn More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Repository Stats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Learning Outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙏 Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="quantum-computing-101-from-fundamentals-to-applications">Quantum Computing 101: From Fundamentals to Applications<a class="headerlink" href="#quantum-computing-101-from-fundamentals-to-applications" title="Permanent link">&para;</a></h1>
+<div align="center">
+
+![Quantum Computing](https://img.shields.io/badge/Quantum-Computing-blueviolet?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+**A comprehensive, beginner-friendly guide to quantum computing**  
+*From quantum mechanics basics through the complete quantum stack, algorithms, and real-world applications*
+
+[Getting Started](#-getting-started) • [Learning Paths](#-learning-paths) • [Contents](#-contents) • [Contributing](#-contributing)
+
+</div>
+
+<hr />
+<h2 id="about-this-repository">🌟 <strong>About This Repository</strong><a class="headerlink" href="#about-this-repository" title="Permanent link">&para;</a></h2>
+<p>Welcome to <strong>Quantum Computing 101</strong>! This repository is designed to take you from zero to hero in quantum computing, whether you're a:</p>
+<ul>
+<li>🎓 <strong>Complete beginner</strong> curious about quantum computing</li>
+<li>💻 <strong>Software developer</strong> wanting to build quantum applications</li>
+<li>🔬 <strong>Researcher/Scientist</strong> exploring quantum algorithms</li>
+<li>💼 <strong>Business leader</strong> understanding quantum's potential</li>
+<li>🧑‍🎓 <strong>Student</strong> learning quantum computing fundamentals</li>
+</ul>
+<h3 id="what-makes-this-different"><strong>What Makes This Different?</strong><a class="headerlink" href="#what-makes-this-different" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Progressive learning</strong>: Start from basics, build up systematically</li>
+<li>✅ <strong>Visual first</strong>: Every concept explained with clear illustrations</li>
+<li>✅ <strong>Hands-on</strong>: Interactive Jupyter notebooks and real code examples</li>
+<li>✅ <strong>Framework agnostic</strong>: Examples in Qiskit, Cirq, Q#, and more</li>
+<li>✅ <strong>Practical focus</strong>: Real use cases and industry applications</li>
+<li>✅ <strong>Complete stack</strong>: From hardware to high-level algorithms</li>
+</ul>
+<hr />
+<h2 id="getting-started">🚀 <strong>Getting Started</strong><a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Basic understanding of programming (Python recommended)</li>
+<li>High school level mathematics (algebra, basic trigonometry)</li>
+<li>Curiosity and willingness to learn! 🧠</li>
+</ul>
+<h3 id="quick-start"><strong>Quick Start</strong><a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Choose your learning path</strong> (see below)</li>
+<li><strong>Start with <a href="./01-foundations/">Foundations</a></strong> if you're new</li>
+<li><strong>Run the notebooks</strong> in <a href="./06-hands-on/">Hands-On</a> to experiment</li>
+<li><strong>Explore algorithms</strong> in <a href="./04-algorithms/">Part 4</a> when ready</li>
+</ol>
+<h3 id="installation-for-hands-on-coding"><strong>Installation</strong> (for hands-on coding)<a class="headerlink" href="#installation-for-hands-on-coding" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone this repository</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/manavgup/quantum-computing-101.git
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>quantum-computing-101
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Install dependencies</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Launch Jupyter</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>jupyter<span class="w"> </span>notebook
+</span></code></pre></div>
+<hr />
+<h2 id="learning-paths">🎯 <strong>Learning Paths</strong><a class="headerlink" href="#learning-paths" title="Permanent link">&para;</a></h2>
+<p>Choose the path that fits your background and goals:</p>
+<h3 id="path-1-complete-beginner">🟢 <strong>Path 1: Complete Beginner</strong><a class="headerlink" href="#path-1-complete-beginner" title="Permanent link">&para;</a></h3>
+<p><em>"I'm new to quantum computing and want to start from scratch"</em></p>
+<ol>
+<li><a href="./01-foundations/01-why-quantum.md">Why Quantum Computing?</a></li>
+<li><a href="./01-foundations/04-the-qubit.md">The Qubit</a></li>
+<li><a href="./02-gates-and-circuits/01-single-qubit-gates.md">Quantum Gates</a></li>
+<li><a href="./06-hands-on/notebooks/01-first-quantum-circuit.ipynb">Your First Circuit</a> 🔬</li>
+<li><a href="./04-algorithms/README.md">Quantum Algorithms Overview</a></li>
+</ol>
+<h3 id="path-2-software-developer">🟡 <strong>Path 2: Software Developer</strong><a class="headerlink" href="#path-2-software-developer" title="Permanent link">&para;</a></h3>
+<p><em>"I code daily and want to build quantum applications"</em></p>
+<ol>
+<li><a href="./01-foundations/02-classical-recap.md">Classical Computing Recap</a> ⚡</li>
+<li><a href="./03-quantum-stack/README.md">Quantum Stack Overview</a></li>
+<li><a href="./03-quantum-stack/04-frameworks.md">Frameworks Comparison</a></li>
+<li><a href="./04-algorithms/implementations/">Algorithm Implementations</a></li>
+<li><a href="./06-hands-on/">Hands-On Projects</a> 💻</li>
+</ol>
+<h3 id="path-3-researcherscientist">🔴 <strong>Path 3: Researcher/Scientist</strong><a class="headerlink" href="#path-3-researcherscientist" title="Permanent link">&para;</a></h3>
+<p><em>"I want deep understanding of quantum algorithms"</em></p>
+<ol>
+<li><a href="./01-foundations/03-quantum-mechanics-basics.md">Quantum Mechanics Essentials</a></li>
+<li><a href="./02-gates-and-circuits/04-circuit-identities.md">Mathematical Foundations</a></li>
+<li><a href="./04-algorithms/">Algorithm Deep-Dives</a></li>
+<li><a href="./07-resources/research-papers.md">Research Papers</a></li>
+<li><a href="./06-hands-on/exercises/advanced/">Advanced Implementations</a></li>
+</ol>
+<h3 id="path-4-businessexecutive">💼 <strong>Path 4: Business/Executive</strong><a class="headerlink" href="#path-4-businessexecutive" title="Permanent link">&para;</a></h3>
+<p><em>"I need to understand quantum's business impact"</em></p>
+<ol>
+<li><a href="./01-foundations/01-why-quantum.md">Why Quantum? The Business Case</a></li>
+<li><a href="./03-quantum-stack/06-complete-stack.md">The Quantum Stack</a></li>
+<li><a href="./05-use-cases/">Industry Use Cases</a></li>
+<li><a href="./05-use-cases/08-maturity-matrix.md">Maturity Matrix</a></li>
+<li><a href="./05-use-cases/09-limitations.md">Current Limitations</a></li>
+</ol>
+<hr />
+<h2 id="contents">📚 <strong>Contents</strong><a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<h3 id="part-1-quantum-foundations"><strong>Part 1: Quantum Foundations</strong> 🎯<a class="headerlink" href="#part-1-quantum-foundations" title="Permanent link">&para;</a></h3>
+<p><em>Start here if you're new to quantum computing</em></p>
+<ul>
+<li><a href="./01-foundations/01-why-quantum.md">Why Quantum Computing?</a> - The motivation and quantum advantage</li>
+<li><a href="./01-foundations/02-classical-recap.md">Classical Computing Recap</a> - Bits, gates, and circuits</li>
+<li><a href="./01-foundations/03-quantum-mechanics-basics.md">Quantum Mechanics Essentials</a> - Wave-particle duality, superposition</li>
+<li><a href="./01-foundations/04-the-qubit.md">The Qubit</a> - Bloch sphere, quantum states</li>
+<li><a href="./01-foundations/05-entanglement.md">Quantum Entanglement</a> - Bell states, correlations</li>
+<li><a href="./01-foundations/06-measurement.md">Quantum Measurement</a> - Wave function collapse, Born rule</li>
+</ul>
+<h3 id="part-2-quantum-gates-circuits"><strong>Part 2: Quantum Gates &amp; Circuits</strong> ⚡<a class="headerlink" href="#part-2-quantum-gates-circuits" title="Permanent link">&para;</a></h3>
+<p><em>Learn the building blocks of quantum programs</em></p>
+<ul>
+<li><a href="./02-gates-and-circuits/01-single-qubit-gates.md">Single-Qubit Gates</a> - Pauli, Hadamard, rotation gates</li>
+<li><a href="./02-gates-and-circuits/02-multi-qubit-gates.md">Multi-Qubit Gates</a> - CNOT, Toffoli, SWAP</li>
+<li><a href="./02-gates-and-circuits/03-quantum-circuits.md">Quantum Circuits</a> - Circuit notation and composition</li>
+<li><a href="./02-gates-and-circuits/04-circuit-identities.md">Circuit Identities</a> - Optimization patterns</li>
+</ul>
+<h3 id="part-3-the-quantum-computing-stack"><strong>Part 3: The Quantum Computing Stack</strong> 🏗️<a class="headerlink" href="#part-3-the-quantum-computing-stack" title="Permanent link">&para;</a></h3>
+<p><em>Understand the complete technology stack</em></p>
+<ul>
+<li><a href="./03-quantum-stack/01-hardware-layer.md">Hardware Layer</a> - Superconducting, trapped ions, photonic</li>
+<li><a href="./03-quantum-stack/02-control-calibration.md">Control &amp; Calibration</a> - Pulse control, error mitigation</li>
+<li><a href="./03-quantum-stack/03-quantum-assembly.md">Quantum Assembly</a> - QASM, Quil, Blackbird</li>
+<li><a href="./03-quantum-stack/04-frameworks.md">Software Frameworks</a> - Qiskit, Cirq, Q#, PennyLane</li>
+<li><a href="./03-quantum-stack/05-cloud-platforms.md">Cloud Platforms</a> - IBM, AWS, Azure, Google</li>
+<li><a href="./03-quantum-stack/06-complete-stack.md">Complete Stack Diagram</a> - The full picture</li>
+</ul>
+<h3 id="part-4-quantum-algorithms"><strong>Part 4: Quantum Algorithms</strong> 🧮<a class="headerlink" href="#part-4-quantum-algorithms" title="Permanent link">&para;</a></h3>
+<p><em>Master the algorithms that demonstrate quantum advantage</em></p>
+<ul>
+<li><a href="./04-algorithms/01-gate-primitives.md">Gate-Level Primitives</a> - QFT, phase kickback</li>
+<li><a href="./04-algorithms/02-deutsch-jozsa.md">Deutsch-Jozsa Algorithm</a> - First quantum advantage</li>
+<li><a href="./04-algorithms/03-grovers-algorithm.md">Grover's Search</a> - Quadratic speedup for search</li>
+<li><a href="./04-algorithms/04-shors-algorithm.md">Shor's Factoring</a> - Breaking RSA encryption</li>
+<li><a href="./04-algorithms/05-quantum-phase-estimation.md">Quantum Phase Estimation</a> - Eigenvalue finding</li>
+<li><a href="./04-algorithms/06-vqe.md">VQE</a> - Variational quantum eigensolver</li>
+<li><a href="./04-algorithms/07-qaoa.md">QAOA</a> - Quantum approximate optimization</li>
+<li><a href="./04-algorithms/08-quantum-ml.md">Quantum ML</a> - Neural networks and kernels</li>
+<li><a href="./04-algorithms/09-algorithm-comparison.md">Algorithm Comparison</a> - Which algorithm for what?</li>
+</ul>
+<h3 id="part-5-use-cases-applications"><strong>Part 5: Use Cases &amp; Applications</strong> 💼<a class="headerlink" href="#part-5-use-cases-applications" title="Permanent link">&para;</a></h3>
+<p><em>Discover how quantum computing solves real-world problems</em></p>
+<ul>
+<li><a href="./05-use-cases/01-drug-discovery.md">Drug Discovery &amp; Chemistry</a></li>
+<li><a href="./05-use-cases/02-finance.md">Finance</a> - Portfolio optimization, risk analysis</li>
+<li><a href="./05-use-cases/03-cryptography.md">Cryptography</a> - Post-quantum cryptography</li>
+<li><a href="./05-use-cases/04-optimization.md">Optimization &amp; Logistics</a></li>
+<li><a href="./05-use-cases/05-machine-learning.md">Machine Learning</a></li>
+<li><a href="./05-use-cases/06-materials-science.md">Materials Science</a></li>
+<li><a href="./05-use-cases/07-climate-energy.md">Climate &amp; Energy</a></li>
+<li><a href="./05-use-cases/08-maturity-matrix.md">Maturity Matrix</a> - When will quantum deliver?</li>
+<li><a href="./05-use-cases/09-limitations.md">Current Limitations</a> - Honest assessment</li>
+</ul>
+<h3 id="part-6-hands-on-learning"><strong>Part 6: Hands-On Learning</strong> 🔬<a class="headerlink" href="#part-6-hands-on-learning" title="Permanent link">&para;</a></h3>
+<p><em>Build and experiment with quantum circuits</em></p>
+<ul>
+<li><a href="./06-hands-on/setup-guide.md">Setup Guide</a> - Get your environment ready</li>
+<li><strong>Interactive Notebooks:</strong></li>
+<li><a href="./06-hands-on/notebooks/01-first-quantum-circuit.ipynb">Your First Quantum Circuit</a></li>
+<li><a href="./06-hands-on/notebooks/02-quantum-teleportation.ipynb">Quantum Teleportation</a></li>
+<li><a href="./06-hands-on/notebooks/03-grovers-step-by-step.ipynb">Building Grover's Algorithm</a></li>
+<li><a href="./06-hands-on/notebooks/04-vqe-hydrogen.ipynb">VQE for Hydrogen</a></li>
+<li><a href="./06-hands-on/notebooks/05-quantum-game.ipynb">Quantum Game</a></li>
+<li><strong>Exercises:</strong> <a href="./06-hands-on/exercises/beginner/">Beginner</a> | <a href="./06-hands-on/exercises/intermediate/">Intermediate</a> | <a href="./06-hands-on/exercises/advanced/">Advanced</a></li>
+</ul>
+<h3 id="part-7-resources-community"><strong>Part 7: Resources &amp; Community</strong> 📖<a class="headerlink" href="#part-7-resources-community" title="Permanent link">&para;</a></h3>
+<p><em>Curated resources for continued learning</em></p>
+<ul>
+<li><a href="./07-resources/learning-resources.md">Learning Resources</a> - Courses, books, videos</li>
+<li><a href="./07-resources/research-papers.md">Research Papers</a> - Key papers by topic</li>
+<li><a href="./07-resources/tools-and-platforms.md">Tools &amp; Platforms</a> - Access to quantum computers</li>
+<li><a href="./07-resources/communities.md">Communities</a> - Discord, Slack, forums</li>
+<li><a href="./07-resources/glossary.md">Glossary</a> - A-Z quantum terms</li>
+<li><a href="./07-resources/faq.md">FAQ</a> - Common questions answered</li>
+</ul>
+<hr />
+<h2 id="visual-learning">🎨 <strong>Visual Learning</strong><a class="headerlink" href="#visual-learning" title="Permanent link">&para;</a></h2>
+<p>This repository emphasizes visual explanations:</p>
+<ul>
+<li>🎯 <strong>Bloch Sphere</strong> visualizations for qubit states</li>
+<li>📊 <strong>Circuit diagrams</strong> for every algorithm</li>
+<li>📈 <strong>Infographics</strong> for technology comparisons</li>
+<li>🎬 <strong>Animations</strong> for quantum phenomena</li>
+<li>🗺️ <strong>Architecture diagrams</strong> for the quantum stack</li>
+</ul>
+<p><em>All illustrations are SVG format for crisp rendering and included in respective folders.</em></p>
+<hr />
+<h2 id="technology-stack">🛠️ <strong>Technology Stack</strong><a class="headerlink" href="#technology-stack" title="Permanent link">&para;</a></h2>
+<p>This repository uses:</p>
+<ul>
+<li><strong>Python 3.8+</strong> for code examples</li>
+<li><strong>Qiskit</strong> (IBM)</li>
+<li><strong>Cirq</strong> (Google)</li>
+<li><strong>Q#</strong> (Microsoft)</li>
+<li><strong>PennyLane</strong> (Xanadu)</li>
+<li><strong>Jupyter Notebooks</strong> for interactive learning</li>
+<li><strong>Matplotlib/Plotly</strong> for visualizations</li>
+</ul>
+<hr />
+<h2 id="progress-tracker">📈 <strong>Progress Tracker</strong><a class="headerlink" href="#progress-tracker" title="Permanent link">&para;</a></h2>
+<p>Track your learning progress:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 1: Foundations (6 topics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 2: Gates &amp; Circuits (4 topics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 3: Quantum Stack (6 topics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 4: Algorithms (9 topics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 5: Use Cases (9 topics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 6: Complete all notebooks (5 notebooks)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 7: Explore resources</li>
+</ul>
+<hr />
+<h2 id="contributing">🤝 <strong>Contributing</strong><a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>We welcome contributions! Here's how you can help:</p>
+<ul>
+<li>🐛 <strong>Report bugs</strong> or broken links</li>
+<li>💡 <strong>Suggest improvements</strong> to explanations</li>
+<li>✍️ <strong>Add content</strong> (new algorithms, use cases, examples)</li>
+<li>🎨 <strong>Create illustrations</strong> or improve existing ones</li>
+<li>🧪 <strong>Share your projects</strong> built using this guide</li>
+</ul>
+<p>See <a href="./CONTRIBUTING.md">CONTRIBUTING.md</a> for detailed guidelines.</p>
+<h3 id="contributors"><strong>Contributors</strong><a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h3>
+<p>Thanks to all contributors who help improve this resource! ⭐</p>
+<hr />
+<h2 id="license">📜 <strong>License</strong><a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the MIT License - see <a href="./LICENSE">LICENSE</a> file for details.</p>
+<hr />
+<h2 id="connect-learn-more">🌐 <strong>Connect &amp; Learn More</strong><a class="headerlink" href="#connect-learn-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li>💬 <strong>Discussions</strong>: <a href="https://github.com/manavgup/quantum-computing-101/discussions">GitHub Discussions</a></li>
+<li>🐛 <strong>Issues</strong>: <a href="https://github.com/manavgup/quantum-computing-101/issues">Report bugs or request features</a></li>
+<li>⭐ <strong>Star this repo</strong> to bookmark and support the project</li>
+<li>🔔 <strong>Watch</strong> for updates</li>
+</ul>
+<hr />
+<h2 id="repository-stats">📊 <strong>Repository Stats</strong><a class="headerlink" href="#repository-stats" title="Permanent link">&para;</a></h2>
+<p><img alt="Stars" src="https://img.shields.io/github/stars/manavgup/quantum-computing-101?style=social" />
+<img alt="Forks" src="https://img.shields.io/github/forks/manavgup/quantum-computing-101?style=social" />
+<img alt="Issues" src="https://img.shields.io/github/issues/manavgup/quantum-computing-101" />
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/manavgup/quantum-computing-101" /></p>
+<hr />
+<h2 id="learning-outcomes">🎓 <strong>Learning Outcomes</strong><a class="headerlink" href="#learning-outcomes" title="Permanent link">&para;</a></h2>
+<p>After completing this guide, you will be able to:</p>
+<p>✅ Explain fundamental quantum mechanics concepts<br />
+✅ Understand qubits, superposition, and entanglement<br />
+✅ Read and write quantum circuits<br />
+✅ Implement quantum algorithms in multiple frameworks<br />
+✅ Understand the complete quantum computing stack<br />
+✅ Evaluate quantum use cases for business problems<br />
+✅ Run quantum programs on real quantum computers<br />
+✅ Stay current with quantum computing developments  </p>
+<hr />
+<h2 id="acknowledgments">🙏 <strong>Acknowledgments</strong><a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
+<p>Inspired by and built upon the excellent work of:
+- IBM Quantum Learning
+- Qiskit textbook
+- Microsoft Quantum Katas
+- Quantum computing research community</p>
+<hr />
+<div align="center">
+
+**⭐ If you find this helpful, please star the repository! ⭐**
+
+*Happy quantum computing!* 🚀
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Manav Gup. Licensed under MIT License.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/manavgup/quantum-computing-101" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/manavgup" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
