@@ -3107,6 +3107,8 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- |α|² + |β|² = 1 (normalization: probabilities sum to 1)
 </span></code></pre></div></p>
 <p><strong>Key property:</strong> Can be in both states simultaneously until measured!</p>
+<p><img alt="Classical vs Quantum Bit" src="../illustrations/classical-vs-quantum-bit.png" /></p>
+<p><em>Figure: Classical bits exist in one definite state (0 OR 1), while quantum bits can exist in superposition (0 AND 1 simultaneously). The classical bit shown is in state |0⟩, while the qubit is in superposition α|0⟩ + β|1⟩.</em></p>
 <h3 id="what-makes-this-powerful">What Makes This Powerful?<a class="headerlink" href="#what-makes-this-powerful" title="Permanent link">&para;</a></h3>
 <p><strong>Classical system with n bits:</strong>
 - Can be in one of 2ⁿ possible states at any time
@@ -3170,6 +3172,8 @@
 </li>
 <li>Defined by two angles: θ (theta) and φ (phi)</li>
 </ol>
+<p><img alt="Bloch Sphere Annotated" src="../illustrations/bloch-sphere-annotated.png" /></p>
+<p><em>Figure: The Bloch sphere with complete geometric annotations. Any pure qubit state |ψ⟩ corresponds to a point on the sphere's surface, parameterized by angles θ (polar angle from north pole) and φ (azimuthal angle in the XY plane). The six cardinal states are marked: |0⟩ and |1⟩ at the poles, and |+⟩, |−⟩, |↻⟩, |↺⟩ on the equator.</em></p>
 <h3 id="mathematical-form">Mathematical Form<a class="headerlink" href="#mathematical-form" title="Permanent link">&para;</a></h3>
 <p>Any point on the Bloch sphere can be written as:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>|ψ⟩ = cos(θ/2)|0⟩ + e^(iφ) sin(θ/2)|1⟩
@@ -3237,6 +3241,8 @@
 <p><strong>Analogy:</strong>
 - Pure state: Coherent laser beam (all photons in phase)
 - Mixed state: Light bulb (photons with random phases)</p>
+<p><img alt="State Vector Visualization" src="../illustrations/state-vector-visualization.png" /></p>
+<p><em>Figure: Three examples of qubit states shown as amplitude bars. Left: Definite state |0⟩ has all amplitude in the |0⟩ component. Middle: Equal superposition |+⟩ has equal amplitudes in both components. Right: Custom superposition with different probability distributions. The normalization condition |α|² + |β|² = 1 is satisfied for all states.</em></p>
 <h3 id="special-qubit-states">Special Qubit States<a class="headerlink" href="#special-qubit-states" title="Permanent link">&para;</a></h3>
 <p><strong>1. Computational basis states</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>|0⟩ = [1]    (North pole)
@@ -3504,6 +3510,8 @@ Relative phase is observable - creates interference!</p>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Rotation by angle θ around axis n on Bloch sphere
 </span></code></pre></div></p>
+<p><img alt="Gate Transformation Sequence" src="../illustrations/gate-transformation-sequence.png" /></p>
+<p><em>Figure: Step-by-step visualization of gate transformations. Starting from |0⟩, applying Hadamard creates |+⟩, then Z gate transforms to |−⟩, and finally another Hadamard results in |1⟩. Each step shows the amplitude distribution, demonstrating how gates manipulate quantum states.</em></p>
 <h3 id="key-properties">Key Properties<a class="headerlink" href="#key-properties" title="Permanent link">&para;</a></h3>
 <p><strong>1. Reversibility</strong>
 All quantum gates are reversible (unitary):
@@ -3534,10 +3542,14 @@ Gates change the state deterministically. Only measurement is probabilistic!</p>
 - Massive parallelism (quantum algorithms explore multiple paths)
 - Interference effects (amplify correct answers, cancel wrong ones)
 - Entanglement (correlations beyond classical)</p>
+<p><img alt="Multi-Qubit Growth" src="../illustrations/multi-qubit-growth.png" /></p>
+<p><em>Figure: Exponential growth of quantum state space. Left: Bar chart showing how the number of simultaneously accessible states grows as 2ⁿ. Right: Comparison table demonstrating the quantum advantage - 50 qubits can represent more states than classical systems with 10¹⁵ bits.</em></p>
 <h3 id="but-theres-a-catch">But There's a Catch!<a class="headerlink" href="#but-theres-a-catch" title="Permanent link">&para;</a></h3>
 <p><strong>Measurement problem:</strong>
 - You can only extract n classical bits from n qubits
-- Measurement collapses superposition
+- Measurement collapses superposition</p>
+<p><img alt="Measurement Collapse" src="../illustrations/measurement-collapse.png" /></p>
+<p><em>Figure: The measurement process destroys superposition. Left: Before measurement, the qubit exists in superposition with amplitudes α=0.6 and β=0.8, giving probabilities 36% and 64%. Middle: Upon measurement, the system randomly collapses based on these probabilities. Right: After measurement, the qubit is in a definite classical state (here |1⟩), and superposition is irreversibly lost.</em>
 - Must design algorithms carefully to get useful answers</p>
 <p><strong>Decoherence:</strong>
 - Qubits interact with environment
